@@ -8,6 +8,8 @@ pipeline {
     environment {
         IMAGE_NAME = 'dennis9218/sky-server:latest'
         PATH = "/usr/local/bin:$PATH"
+        DOCKER_USER = credentials('dockerhub-username')
+        DOCKER_PASS = credentials('dockerhub-password')
     }
 
     stages {
