@@ -1,6 +1,9 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven'
+    }
     environment {
         IMAGE_NAME = 'dennis9218/sky-server:latest'
     }
