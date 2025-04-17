@@ -31,8 +31,10 @@
         <jaxb-api>2.3.1</jaxb-api>
         <poi>3.16</poi>
     </properties>
+
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -43,6 +45,7 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok}</version>
+                <scope>provide</scope>
             </dependency>
 
             <dependency>
@@ -125,4 +128,27 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <build>
+        <plugins>
+            <!-- 这是我们要加的插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version> <!-- 你可以换成合适版本 -->
+                <configuration>
+                    <source>1.8</source>  <!-- Java 源代码版本 -->
+                    <target>1.8</target>  <!-- 编译生成的 class 版本 -->
+
+                    <!-- 开启注解处理器支持（支持 Lombok） -->
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.30</version> <!-- 使用你项目对应版本 -->
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
