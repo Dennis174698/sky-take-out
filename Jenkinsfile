@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         maven 'maven'
+        jdk 'jdk11'
     }
     environment {
         IMAGE_NAME = 'dennis9218/sky-server:latest'
