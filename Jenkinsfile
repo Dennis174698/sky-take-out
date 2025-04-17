@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'maven'  // 要和 Jenkins 全局工具配置里的 Maven 名字一致
-    }
     environment {
         IMAGE_NAME = 'dennis9218/sky-server:latest'
     }
