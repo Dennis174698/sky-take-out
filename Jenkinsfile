@@ -39,7 +39,7 @@ pipeline {
 
                     sh '''
                         docker build -t $DOCKER_USER/sky-server:latest -f sky-server/Dockerfile .
-                        echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                        echo $DOCKER_PASS | docker login -u $DOCKER_USER -p $DOCKER_PASS
                         docker push $DOCKER_USER/sky-server:latest
                     '''
 
