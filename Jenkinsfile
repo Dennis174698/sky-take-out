@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = 'dennis9218/sky-server:latest'  // Docker Hub 上的镜像名称
+        IMAGE_NAME = 'sky-server:latest'  // Docker Hub 上的镜像名称
         PATH = "/usr/local/bin:$PATH"
     }
 
